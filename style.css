@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#273d54, #2a9d8f);
+  background-size: cover;
+}
+
+.container {
+  width: 500px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  font-size: 35px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box input {
+  width: 84%;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #000;
+  background-color: #e6f5fb;
+  padding: 12px 16px;
+  border-radius: 14px;
+}
+
+.search-box input::placeholder {
+  color: #000;
+}
+
+.search-box button {
+  width: 46px;
+  height: 46px;
+  background-color: #e6f5fb;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-box button:hover {
+  color: #fff;
+  background-color: #ababab;
+}
+
+.weather-body {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 20px;
+  display: none;
+}
+.weather-body img {
+  width: 60%;
+}
+
+.weather-box {
+  margin-block: 20px;
+  text-align: center;
+}
+
+.weather-box .temperature {
+  font-size: 40px;
+  font-weight: 800;
+  position: relative;
+}
+
+.weather-box .temperature sup {
+  font-size: 20px;
+  position: absolute;
+  font-weight: 600;
+}
+
+.weather-box .description {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.humidity,
+.wind {
+  display: flex;
+  align-items: center;
+}
+
+.humidity {
+  margin-left: 20px;
+}
+
+.wind {
+  margin-right: 20px;
+}
+
+.weather-details i {
+  font-size: 36px;
+}
+
+.weather-details .text {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.text span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.location-not-found {
+  margin-top: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.location-not-found h1 {
+  font-size: 20px;
+  color: #6b6b6b;
+  margin-block-end: 15px;
+}
+.location-not-found img {
+  width: 80%;
+}
+
+/* Background styles */
+body.sunny {
+  background-image: url("/images/sunny.jpg");
+}
+
+body.cloudy {
+  background-image: url("/images/cloudy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body.rainy {
+  background-image: url("/images/rainy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body.mist {
+  background-image: url("/images/mist.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body.snow {
+  background-image: url("/images/snow.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body.default {
+  background-image: url("/images/default.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* CSS for Toggle Button */
+.toggle-container {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.toggle-container label {
+  font-size: 1.2em;
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.toggle-container input[type="checkbox"] {
+  appearance: none;
+  width: 50px;
+  height: 25px;
+  background-color: #ddd;
+  border-radius: 15px;
+  position: relative;
+  top: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-container input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-container input[type="checkbox"]:checked {
+  background-color: #5d8736;
+}
+
+.toggle-container input[type="checkbox"]:checked::before {
+  transform: translateX(25px);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .app-title {
+    font-size: 30px;
+  }
+
+  .search-box input {
+    width: 70%;
+  }
+
+  .weather-body img {
+    width: 75%;
+  }
+
+  .humidity,
+  .wind {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 15px;
+    height: auto;
+  }
+
+  .app-title {
+    font-size: 25px;
+  }
+
+  .search-box input {
+    width: 65%;
+    font-size: 16px;
+  }
+
+  .search-box button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .weather-box .temperature {
+    font-size: 30px;
+  }
+
+  .weather-box .description {
+    font-size: 16px;
+  }
+
+  .weather-details i {
+    font-size: 24px;
+  }
+
+  .weather-details .text {
+    font-size: 14px;
+  }
+
+  .text span {
+    font-size: 16px;
+  }
+}
